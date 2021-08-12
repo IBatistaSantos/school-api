@@ -7,7 +7,18 @@ export interface CreateSchoolRepository {
 }
 
 export namespace CreateSchoolRepository {
-  export type Params = Omit<SchoolModel, "id">;
+  export type Params = {
+    name: string;
+    logo_url: string;
+    address?: {
+      street: string;
+      postalCode: string;
+      city: string;
+      countryCode: string;
+      country: string;
+      complement: string;
+    };
+  };
 
   export type Result = undefined | SchoolModel;
 }
